@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Dashboard - Study Marathon</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p5Mg0B1+XxUAd8vQy7m1nG8TwyuFpqfGVw6XkdaPmp2f/yiPaD8kK0XgZQ3P0Q7+u3JZmLefKZoKqe2mTrSjDw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <h2>Admin Dashboard</h2>
+        <div class="nav">
+            <a href="admin.html">Management</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="books.html">Books</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="chat.html">Chat</a>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <div class="profile-section">
+            <div class="card profile-card">
+                <h3>Welcome, Administrator!</h3>
+                <p>Status: Admin</p>
+                <p>Manage the Study Marathon platform</p>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>Total Users</h3>
+                <p id="totalUsers">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Active Lessons</h3>
+                <p id="activeLessons">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Books Available</h3>
+                <p id="totalBooks">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Quiz Questions</h3>
+                <p id="totalQuizzes">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>System Status</h3>
+                <p id="systemStatus">Online</p>
+            </div>
+            <div class="card">
+                <h3>Recent Activity</h3>
+                <p id="recentActivity">Loading...</p>
+            </div>
+        </div>
+
+        <div class="admin-quick-actions">
+            <h3>Quick Actions</h3>
+            <div class="quick-action-buttons">
+                <button onclick="window.location='admin.html'" class="action-btn">
+                    📚 Manage Content
+                </button>
+                <button onclick="window.location='lessons.html'" class="action-btn">
+                    📹 Schedule Lessons
+                </button>
+                <button onclick="window.location='books.html'" class="action-btn">
+                    📖 Add Books
+                </button>
+                <button onclick="window.location='quiz.html'" class="action-btn">
+                    ❓ Create Quizzes
+                </button>
+                <button onclick="viewUserAnalytics()" class="action-btn">
+                    📊 User Analytics
+                </button>
+                <button onclick="systemSettings()" class="action-btn">
+                    ⚙️ System Settings
+                </button>
+            </div>
+        </div>
+
+        <div id="adminNotifications" class="notifications">
+            <h3>System Notifications</h3>
+            <div id="systemAlerts"></div>
+        </div>
+
+        <footer>
+            <div class="footer-brand">
+                <p>&copy; 2026 Study Marathon. All rights reserved.</p>
+                <p>Powered by Topfire Tech</p>
+            </div>
+            <div class="footer-contact">
+                <span>Email: <a href="mailto:topfiremedia0@gmail.com">topfiremedia0@gmail.com</a></span>
+                <span>Contact: <a href="tel:0761696957">0761696957</a></span>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
+
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="firebase.js"></script>
+        <script src="admin-dashboard.js"></script>
+    </body>
+</html>

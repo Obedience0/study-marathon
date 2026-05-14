@@ -1,0 +1,112 @@
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-section {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.profile-card {
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border-radius: 15px;
+  background: white;
+}
+
+.profile-card h3 {
+  margin-top: 0;
+  color: #1c1e21;
+}
+
+.profile-card p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.admin-quick-actions, .student-quick-actions {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.admin-quick-actions h3, .student-quick-actions h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.quick-action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.action-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.upcoming-section, .recent-books-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.upcoming-section h3, .recent-books-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.upcoming-list, .recent-books-list {
+  display: grid;
+  gap: 15px;
+}
+
+.upcoming-item, .recent-book-item {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.upcoming-item:hover, .recent-book-item:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.upcoming-item h4, .recent-book-item h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.book-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}

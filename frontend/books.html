@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Study Marathon Books</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p5Mg0B1+XxUAd8vQy7m1nG8TwyuFpqfGVw6XkdaPmp2f/yiPaD8kK0XgZQ3P0Q7+u3JZmLefKZoKqe2mTrSjDw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <h2>Study Marathon Books</h2>
+        <div class="nav">
+            <a href="dashbord.html">Dashboard</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="chat.html">Chat</a>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <div class="books-container">
+            <div id="books"></div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="firebase.js"></script>
+        <script src="api.js"></script>
+        <script src="content-loader.js"></script>
+        <script src="books.js"></script>
+    </body>
+</html>

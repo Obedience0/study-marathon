@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Marathon Chat</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-app">
+        <!-- Sidebar - Conversations List -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="header-top">
+                    <h1>Messages</h1>
+                    <div class="header-icons">
+                        <button class="icon-btn" id="newChatBtn" title="New Chat">
+                            <i class="fas fa-pen-to-square"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search conversations...">
+                </div>
+            </div>
+
+            <div class="conversations-list">
+                <div class="conversation-item active" data-user-id="1">
+                    <div class="conversation-avatar">
+                        <img src="https://via.placeholder.com/50?text=JD" alt="John Doe">
+                        <span class="online-indicator online"></span>
+                    </div>
+                    <div class="conversation-info">
+                        <div class="conversation-header">
+                            <h3>John Doe</h3>
+                            <span class="time">2:30 PM</span>
+                        </div>
+                        <p class="last-message">That sounds great! Let me know when...</p>
+                        <span class="unread-badge">1</span>
+                    </div>
+                </div>
+
+                <div class="conversation-item" data-user-id="2">
+                    <div class="conversation-avatar">
+                        <img src="https://via.placeholder.com/50?text=SM" alt="Sarah Mike">
+                        <span class="online-indicator online"></span>
+                    </div>
+                    <div class="conversation-info">
+                        <div class="conversation-header">
+                            <h3>Sarah Mike</h3>
+                            <span class="time">1:15 PM</span>
+                        </div>
+                        <p class="last-message">👍 Thanks!</p>
+                    </div>
+                </div>
+
+                <div class="conversation-item" data-user-id="3">
+                    <div class="conversation-avatar">
+                        <img src="https://via.placeholder.com/50?text=AL" alt="Alex Lee">
+                        <span class="online-indicator offline"></span>
+                    </div>
+                    <div class="conversation-info">
+                        <div class="conversation-header">
+                            <h3>Alex Lee</h3>
+                            <span class="time">Yesterday</span>
+                        </div>
+                        <p class="last-message">See you tomorrow</p>
+                    </div>
+                </div>
+
+                <div class="conversation-item" data-user-id="4">
+                    <div class="conversation-avatar">
+                        <img src="https://via.placeholder.com/50?text=EC" alt="Emma Carter">
+                        <span class="online-indicator offline"></span>
+                    </div>
+                    <div class="conversation-info">
+                        <div class="conversation-header">
+                            <h3>Emma Carter</h3>
+                            <span class="time">Monday</span>
+                        </div>
+                        <p class="last-message">Can you help with the project?</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <div class="header-left">
+                    <button class="back-btn mobile-only" id="backBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="user-info">
+                        <img src="https://via.placeholder.com/40?text=JD" alt="John Doe" class="user-avatar">
+                        <div class="user-status">
+                            <h2>John Doe</h2>
+                            <span class="status-text" id="statusText">Active now</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn" title="Call">
+                        <i class="fas fa-phone"></i>
+                    </button>
+                    <button class="icon-btn" title="Video Call">
+                        <i class="fas fa-video"></i>
+                    </button>
+                    <button class="icon-btn" title="More Options">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Messages Container -->
+            <div class="messages-container" id="messagesContainer">
+                <div class="message-group">
+                    <div class="message-date">
+                        <span>Today</span>
+                    </div>
+                </div>
+
+                <div class="message received">
+                    <img src="https://via.placeholder.com/32?text=JD" alt="John" class="message-avatar">
+                    <div class="message-bubble">
+                        <p>Hey! How are you?</p>
+                        <span class="message-time">2:20 PM</span>
+                    </div>
+                </div>
+
+                <div class="message sent">
+                    <div class="message-bubble">
+                        <p>I'm doing great, thanks for asking!</p>
+                        <span class="message-time">2:21 PM</span>
+                        <span class="read-receipt" title="Read">
+                            <i class="fas fa-check-double"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="message received">
+                    <img src="https://via.placeholder.com/32?text=JD" alt="John" class="message-avatar">
+                    <div class="message-bubble">
+                        <p>That's awesome! Want to grab coffee later?</p>
+                        <span class="message-time">2:22 PM</span>
+                    </div>
+                </div>
+
+                <div class="message sent">
+                    <div class="message-bubble">
+                        <p>Sure! What time works for you?</p>
+                        <span class="message-time">2:23 PM</span>
+                        <span class="read-receipt" title="Read">
+                            <i class="fas fa-check-double"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="message received">
+                    <img src="https://via.placeholder.com/32?text=JD" alt="John" class="message-avatar">
+                    <div class="message-bubble">
+                        <p>How about 3 PM at the café near campus?</p>
+                        <span class="message-time">2:25 PM</span>
+                    </div>
+                </div>
+
+                <!-- Typing Indicator -->
+                <div class="message received typing-message">
+                    <img src="https://via.placeholder.com/32?text=JD" alt="John" class="message-avatar">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Input Area -->
+            <div class="message-input-area">
+                <div class="input-wrapper">
+                    <button class="attachment-btn" id="attachmentBtn" title="Attach File">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <input type="file" id="fileInput" hidden multiple accept="image/*,.pdf,.doc,.docx">
+                    
+                    <input type="text" id="messageInput" placeholder="Aa" class="message-input" autocomplete="off">
+                    
+                    <button class="emoji-btn" id="emojiBtn" title="Emoji">
+                        <i class="fas fa-face-smile"></i>
+                    </button>
+                </div>
+
+                <button class="send-btn" id="sendBtn" title="Send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+
+            <!-- Attachment Preview -->
+            <div class="attachment-preview" id="attachmentPreview">
+                <div class="preview-items"></div>
+                <button class="close-preview" id="closePreview">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </main>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+            <div class="empty-icon">
+                <i class="fas fa-comments"></i>
+            </div>
+            <h2>Your messages</h2>
+            <p>Send private messages to connect with others</p>
+            <button class="new-chat-btn" id="newChatBtn2">
+                Start a conversation
+            </button>
+        </div>
+    </div>
+
+    <!-- New Chat Modal -->
+    <div class="modal" id="newChatModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Start new conversation</h3>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="userSearchInput" placeholder="Search for a user...">
+                <div class="user-list" id="userList">
+                    <div class="user-item" data-user-id="5">
+                        <img src="https://via.placeholder.com/40?text=PM" alt="">
+                        <div>
+                            <h4>Peter Martin</h4>
+                            <p>@petermartin</p>
+                        </div>
+                    </div>
+                    <div class="user-item" data-user-id="6">
+                        <img src="https://via.placeholder.com/40?text=RC" alt="">
+                        <div>
+                            <h4>Rachel Cooper</h4>
+                            <p>@rachelcooper</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-bell"></i>
+        <span id="notificationText">New message from John</span>
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>

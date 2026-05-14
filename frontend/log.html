@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Study Marathon - Login</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p5Mg0B1+XxUAd8vQy7m1nG8TwyuFpqfGVw6XkdaPmp2f/yiPaD8kK0XgZQ3P0Q7+u3JZmLefKZoKqe2mTrSjDw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div class="auth-container">
+            <h2>Study Marathon</h2>
+
+            <div id="loginForm" class="form-container">
+                <h3>Login</h3>
+                <input type="email" id="email" placeholder="Email" required><br>
+                <input type="password" id="password" placeholder="Password" required><br>
+                <button onclick="login()">Login</button>
+                <p>Don't have an account? <a href="#" onclick="showRegister()">Sign Up</a></p>
+            </div>
+
+            <div id="registerForm" class="form-container" style="display: none;">
+                <h3>Sign Up</h3>
+                <input type="text" placeholder="full Name" required><br>
+                <input type="text" placeholder="Username" required><br>
+                <input type="email" id="regEmail" placeholder="Email" required><br>
+                <input type="password" id="regPassword" placeholder="Password" required><br>
+                <select class="gender">
+                    <option value="">-----Select gender----</option>
+                    <option value="Male">Male</option>
+                    <option  value="Famale">female</option>
+                </select>
+                <button onclick="register()">Create Account</button>
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="firebase.js"></script>
+        <script src="auth.js"></script>
+
+    </body>
+</html>

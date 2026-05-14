@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Study Marathon Admin Panel</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <h2>Study Marathon Admin Panel</h2>
+        <div class="nav">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="books.html">Books</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="chat.html">Chat</a>
+        </div>
+
+        <div class="admin-container">
+            <h3>Add New Book</h3>
+            <div class="form-group">
+                <input id="bookTitle" placeholder="Book title" required>
+               <button><input class="input-btn" id="bookFile" type="file" accept=".pdf" required>insert book</button>
+                <input id="videoLink" placeholder="YouTube link">
+                <button onclick="addBookViaAPI()">Add Book</button>
+            </div>
+
+            <h3>Add New Lesson</h3>
+            <div class="form-group">
+                <input id="lessonTitle" placeholder="Lesson title" required>
+                <input id="zoomLink" placeholder="Zoom link" required>
+                <input id="startTime" type="datetime-local" required>
+                <input id="endTime" type="datetime-local" required>
+                <button onclick="addLessonViaAPI()">Add Lesson</button>
+            </div>
+
+            <h3>Add Quiz Question</h3>
+            <div class="form-group">
+                <input id="question" placeholder="Question" required>
+                <input id="a" placeholder="Option A" required>
+                <input id="b" placeholder="Option B" required>
+                <input id="c" placeholder="Option C" required>
+                <input id="correct" placeholder="Correct answer (a/b/c)" required>
+                <button onclick="addQuizViaAPI()">Add Quiz</button>
+            </div>
+
+            <h3>Manage Content</h3>
+            <div class="management-section">
+                <button onclick="loadBooks()">Load Books</button>
+                <div id="booksList"></div>
+
+                <button onclick="loadLessons()">Load Lessons</button>
+                <div id="lessonsList"></div>
+
+                <button onclick="loadQuiz()">Load Quiz</button>
+                <div id="quizList"></div>
+
+                <button onclick="loadUsers()">Load Users</button>
+                <div id="usersList"></div>
+
+                <button onclick="loadMessages()">Load Chat Messages</button>
+                <div id="messagesList"></div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-brand">
+                <p>&copy; 2026 Study Marathon. All rights reserved.</p>
+                <p>Powered by Topfire Tech</p>
+            </div>
+            <div class="footer-contact">
+                <span>Email: <a href="mailto:topfiremedia0@gmail.com">topfiremedia0@gmail.com</a></span>
+                <span>Contact: <a href="tel:0761696957">0761696957</a></span>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-x"></i></a>
+                <a href="#" target="_blank" aria-label="youtube"><i class="fab fa-youtube"></i></a>                              
+                <a href="#" target="_blank" aria-label="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="firebase.js"></script>
+        <script src="api.js"></script>
+        <script src="admin-helper.js"></script>
+        <script src="admin.js"></script>
+    </body>
+</html>

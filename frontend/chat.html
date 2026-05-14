@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Study Marathon Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p5Mg0B1+XxUAd8vQy7m1nG8TwyuFpqfGVw6XkdaPmp2f/yiPaD8kK0XgZQ3P0Q7+u3JZmLefKZoKqe2mTrSjDw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <h2>Study Marathon Chat</h2>
+        <div id="connection-status" class="connection-status">🔴 Connecting...</div>
+        <div id="online-status" class="online-status"></div>
+        <div class="nav">
+            <a href="dashbord.html">Dashboard</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="books.html">Books</a>
+            <a href="quiz.html">Quiz</a>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <div class="chat-container">
+            <!-- Chat Mode Selector -->
+            <div class="chat-mode-selector">
+                <button id="groupChatBtn" class="mode-btn active" onclick="switchChatMode('group')">
+                    👥 Group Chat
+                </button>
+                <button id="directChatBtn" class="mode-btn" onclick="switchChatMode('direct')">
+                    💬 Direct Message
+                </button>
+            </div>
+
+            <!-- Main Chat Area -->
+            <div class="chat-main">
+                <!-- Sidebar with user list (for direct messages) -->
+                <div id="chatSidebar" class="chat-sidebar" style="display: none;">
+                    <h3>Select Contact</h3>
+                    <input id="searchUsers" type="text" placeholder="Search users..." class="search-box" oninput="searchUsers(this.value)">
+                    <div id="usersList" class="users-list"></div>
+                </div>
+
+                <!-- Chat Messages Area -->
+                <div class="chat-content">
+                    <!-- Group chat header -->
+                    <div id="groupChatHeader" class="chat-header">
+                        <h3>Group Chat - Everyone</h3>
+                        <p id="groupMemberCount">Loading members...</p>
+                    </div>
+
+                    <!-- Direct chat header -->
+                    <div id="directChatHeader" class="chat-header" style="display: none;">
+                        <h3 id="directChatTitle">Select a contact to chat</h3>
+                        <p id="directUserStatus"></p>
+                    </div>
+
+                    <!-- Messages Display -->
+                    <div id="chat-box" class="chat-box"></div>
+
+                    <!-- Message Input -->
+                    <div class="input-container">
+                        <input id="msg" type="text" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                        <button onclick="send()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="firebase.js"></script>
+        <script src="api.js"></script>
+        <script src="chat-helper.js"></script>
+        <script src="chat.js"></script>
+    </body>
+</html>
